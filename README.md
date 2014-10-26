@@ -8,7 +8,6 @@ http://pazguille.github.io/demo-battery-api/
 ## Support
 - Chrome 38+
 - Chrome for Android
-- Opera 25+
 - Firefox 31+
 
 ## Specs
