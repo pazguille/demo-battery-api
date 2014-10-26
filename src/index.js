@@ -1,12 +1,12 @@
-(function(window) {
+(function() {
   'use strict';
 
   function toTime(sec) {
     sec = parseInt(sec, 10);
 
-    var hours = Math.floor(sec / 3600);
-    var minutes = Math.floor((sec - (hours * 3600)) / 60);
-    var seconds = sec - (hours * 3600) - (minutes * 60);
+    var hours = Math.floor(sec / 3600),
+        minutes = Math.floor((sec - (hours * 3600)) / 60),
+        seconds = sec - (hours * 3600) - (minutes * 60);
 
     if (hours < 10) { hours   = '0' + hours; }
     if (minutes < 10) { minutes = '0' + minutes; }
@@ -24,11 +24,14 @@
     document.styleSheets[0].insertRule('.battery:before{width:' + percentage + '}', 0);
   }
 
-  if ('battery' in navigator) {
+  if (navigator.battery) {
     readBattery(navigator.battery);
-  } else {
+
+  } else if (navigator.getBattery) {
     navigator.getBattery().then(readBattery);
+
+  } else {
+    console.log('Your browser don\'t support Battery API.');
   }
 
-
-}(this));
+}());
