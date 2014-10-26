@@ -31,7 +31,7 @@
     navigator.getBattery().then(readBattery);
 
   } else {
-    console.log('Your browser don\'t support Battery API.');
+    console.log('The browser doesn\'t support the Battery Status API');
   }
 
 }());
