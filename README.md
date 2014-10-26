@@ -11,6 +11,9 @@ http://pazguille.github.io/demo-battery-api/
 - Opera 25+
 - Firefox 31+
 
+## Specs
+http://www.w3.org/TR/battery-status
+
 ## Maintained by
 - Guille Paz (Frontender & Web standards lover)
 - E-mail: [guille87paz@gmail.com](mailto:guille87paz@gmail.com)
