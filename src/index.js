@@ -22,6 +22,7 @@
 
     var percentage = parseFloat((battery.level * 100).toFixed(2)) + '%';
     document.styleSheets[0].insertRule('.battery:before{width:' + percentage + '}', 0);
+    document.querySelector('.battery-percentage').innerHTML = percentage;
   }
 
   if (navigator.battery) {
