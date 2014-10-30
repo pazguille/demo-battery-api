@@ -1,6 +1,8 @@
 (function() {
   'use strict';
 
+  var battery;
+
   function toTime(sec) {
     sec = parseInt(sec, 10);
 
@@ -15,7 +17,8 @@
     return hours + ':' + minutes;
   }
 
-  function readBattery(battery) {
+  function readBattery(b) {
+    battery = b;
     console.log(battery);
     console.log(toTime(battery.chargingTime));
     console.log(toTime(battery.dischargingTime));
@@ -34,5 +37,9 @@
   } else {
     console.log('The browser doesn\'t support the Battery Status API');
   }
+
+
+  // battery.addEventListener("chargingchange", fn);
+  // battery.addEventListener("levelchange", fn);
 
 }());

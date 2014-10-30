@@ -16,9 +16,31 @@ body {
   margin: 150px 0;
 }
 
+.battery-card {
+  font-family: "Helvetica", Arial, sans-serif;
+  display: block;
+  width: 300px;
+  overflow: hidden;
+  border: 1px solid #D5D5D5;
+  border-radius: 6px;
+  font-weight: 100;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
 .battery-box {
   margin: 0 auto;
+  padding: 50px 0;
   text-align: center;
+  border-bottom: 1px solid #D5D5D5;
+}
+
+.battery-percentage {
+  font-size: 2.5em;
+  line-height: 50px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
 }
 
 .battery {
@@ -54,12 +76,18 @@ body {
   border-radius: 0 4px 4px 0;
 }
 
-.battery-percentage {
-  font-size: 2.5em;
-  line-height: 50px;
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 10px;
+.battery-info {
+  font-size: 12px;
+  margin: 0 auto;
+  padding: 20px 45px 10px;
+  overflow: hidden;
+}
+
+.battery-info dd {
+  float: right;
+  margin-top: -22px;
+  text-align: left;
+  width: 35%;
 }
 
 footer {
