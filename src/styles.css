@@ -6,14 +6,22 @@ body {
     font: 100%/1.4em "Helvetica Neue", "Helvetica", "Arial", sans-serif;
     margin: 0 auto;
     padding: 0 0.625em;
+    color: #444;
     -webkit-text-size-adjust: none;
 }
 
 /**
  * Small Screens
  */
-body {
-  margin: 150px 0;
+
+header {
+  margin-bottom: 50px;
+}
+
+h1 {
+  font-size: 4em;
+  line-height: 1em;
+  text-align: center;
 }
 
 .battery-card {
