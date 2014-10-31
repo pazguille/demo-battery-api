@@ -14,11 +14,11 @@ body {
  * Small Screens
  */
 
-header {
-  margin-bottom: 50px;
+.demo-header {
+  margin-bottom: 80px;
 }
 
-h1 {
+.demo-title {
   font-size: 4em;
   line-height: 1em;
   text-align: center;
@@ -33,14 +33,16 @@ h1 {
   border-radius: 6px;
   font-weight: 100;
   margin: 0 auto;
-  padding: 10px 0;
 }
 
-.battery-box {
-  margin: 0 auto;
-  padding: 50px 0;
-  text-align: center;
-  border-bottom: 1px solid #D5D5D5;
+.battery-title {
+  background: #4c4c4c url('bolt.png') no-repeat 95% 15px;
+  color: #fff;
+  font-size: .9em;
+  line-height: 50px;
+  padding: 0 15px;
+  font-weight: 100;
+  margin: 0;
 }
 
 .battery-percentage {
@@ -49,6 +51,13 @@ h1 {
   display: inline-block;
   vertical-align: middle;
   margin-right: 10px;
+}
+
+.battery-box {
+  margin: 0 auto;
+  padding: 50px 0;
+  text-align: center;
+  border-bottom: 1px solid #D5D5D5;
 }
 
 .battery {
@@ -87,7 +96,7 @@ h1 {
 .battery-info {
   font-size: 12px;
   margin: 0 auto;
-  padding: 20px 45px 10px;
+  padding: 15px 45px;
   overflow: hidden;
 }
 
@@ -99,7 +108,7 @@ h1 {
 }
 
 footer {
-  margin: 30px auto;
+  margin: 70px auto 0;
   text-align: center;
 }
 
