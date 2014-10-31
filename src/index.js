@@ -18,14 +18,36 @@
   }
 
   function readBattery(b) {
-    battery = b;
+    battery = b || battery;
     console.log(battery);
-    console.log(toTime(battery.chargingTime));
-    console.log(toTime(battery.dischargingTime));
 
     var percentage = parseFloat((battery.level * 100).toFixed(2)) + '%';
+    var fully;
+    var remmaining;
+
+    if (battery.charging && battery.chargingTime === Infinity) {
+      fully = 'Calculating...';
+    } else if (battery.chargingTime !== Infinity) {
+      fully = toTime(battery.chargingTime);
+    } else {
+      fully = '---';
+    }
+
+    if (!battery.charging && battery.dischargingTime === Infinity) {
+      remmaining = 'Calculating...';
+    } else if (battery.dischargingTime !== Infinity) {
+      remmaining = toTime(battery.dischargingTime);
+    } else {
+      remmaining = '---';
+    }
+
     document.styleSheets[0].insertRule('.battery:before{width:' + percentage + '}', 0);
     document.querySelector('.battery-percentage').innerHTML = percentage;
+    document.querySelector('.battery-status').innerHTML = battery.charging ? 'Adapter' : 'Battery';
+    document.querySelector('.battery-level').innerHTML = percentage;
+    document.querySelector('.battery-fully').innerHTML = fully;
+    document.querySelector('.battery-remmaining').innerHTML = remmaining;
+
   }
 
   if (navigator.battery) {
@@ -38,8 +60,13 @@
     console.log('The browser doesn\'t support the Battery Status API');
   }
 
+  window.onload = function () {
+    battery.addEventListener('chargingchange', function(e) {
+      readBattery();
+    });
 
-  // battery.addEventListener("chargingchange", fn);
-  // battery.addEventListener("levelchange", fn);
-
+    battery.addEventListener("levelchange", function(e) {
+      readBattery();
+    });
+  }
 }());
