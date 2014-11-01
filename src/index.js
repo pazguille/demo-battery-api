@@ -19,7 +19,6 @@
 
   function readBattery(b) {
     battery = b || battery;
-    console.log(battery);
 
     var percentage = parseFloat((battery.level * 100).toFixed(2)) + '%';
     var fully;
