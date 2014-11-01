@@ -57,7 +57,7 @@
     navigator.getBattery().then(readBattery);
 
   } else {
-    console.log('The browser doesn\'t support the Battery Status API');
+    document.querySelector('.not-support').removeAttribute('hidden');
   }
 
   window.onload = function () {
