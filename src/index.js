@@ -20,9 +20,9 @@
   function readBattery(b) {
     battery = b || battery;
 
-    var percentage = parseFloat((battery.level * 100).toFixed(2)) + '%';
-    var fully;
-    var remmaining;
+    var percentage = parseFloat((battery.level * 100).toFixed(2)) + '%',
+        fully,
+        remmaining;
 
     if (battery.charging && battery.chargingTime === Infinity) {
       fully = 'Calculating...';
@@ -60,12 +60,12 @@
   }
 
   window.onload = function () {
-    battery.addEventListener('chargingchange', function(e) {
+    battery.addEventListener('chargingchange', function() {
       readBattery();
     });
 
-    battery.addEventListener("levelchange", function(e) {
+    battery.addEventListener("levelchange", function() {
       readBattery();
     });
-  }
+  };
 }());
