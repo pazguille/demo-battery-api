@@ -22,7 +22,7 @@
 
     var percentage = parseFloat((battery.level * 100).toFixed(2)) + '%',
         fully,
-        remmaining;
+        remaining;
 
     if (battery.charging && battery.chargingTime === Infinity) {
       fully = 'Calculating...';
@@ -33,11 +33,11 @@
     }
 
     if (!battery.charging && battery.dischargingTime === Infinity) {
-      remmaining = 'Calculating...';
+      remaining = 'Calculating...';
     } else if (battery.dischargingTime !== Infinity) {
-      remmaining = toTime(battery.dischargingTime);
+      remaining = toTime(battery.dischargingTime);
     } else {
-      remmaining = '---';
+      remaining = '---';
     }
 
     document.styleSheets[0].insertRule('.battery:before{width:' + percentage + '}', 0);
@@ -45,7 +45,7 @@
     document.querySelector('.battery-status').innerHTML = battery.charging ? 'Adapter' : 'Battery';
     document.querySelector('.battery-level').innerHTML = percentage;
     document.querySelector('.battery-fully').innerHTML = fully;
-    document.querySelector('.battery-remmaining').innerHTML = remmaining;
+    document.querySelector('.battery-remaining').innerHTML = remaining;
 
   }
 
