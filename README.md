@@ -1,4 +1,4 @@
-# Battery Status API [![CircleCI](https://circleci.com/gh/bahmutov/demo-battery-api.svg?style=svg)](https://circleci.com/gh/bahmutov/demo-battery-api)
+# Battery Status API [![CircleCI](https://circleci.com/gh/bahmutov/demo-battery-api.svg?style=svg)](https://circleci.com/gh/bahmutov/demo-battery-api) [![renovate-app badge][renovate-badge]][renovate-app]
 
 > Battery Status API Demo
 
@@ -23,3 +23,6 @@ http://www.w3.org/TR/battery-status
 Licensed under the MIT license.
 
 Copyright (c) 2014 [@pazguille](http://twitter.com/pazguille).
+
+[renovate-badge]: https://img.shields.io/badge/renovate-app-blue.svg
+[renovate-app]: https://renovateapp.com/
