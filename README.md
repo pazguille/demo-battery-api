@@ -1,4 +1,4 @@
-# Battery Status API
+# Battery Status API [![CircleCI](https://circleci.com/gh/bahmutov/demo-battery-api.svg?style=svg)](https://circleci.com/gh/bahmutov/demo-battery-api)
 
 > Battery Status API Demo
 
