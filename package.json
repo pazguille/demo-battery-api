@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "cypress run",
-    "start": "http-server -p 8080"
+    "cy:open": "cypress open",
+    "start": "http-server -c-1 -p 8080",
+    "dev": "start-test 8080 cy:open"
   },
   "repository": {
     "type": "git",
@@ -20,6 +22,7 @@
   "homepage": "https://github.com/bahmutov/demo-battery-api#readme",
   "devDependencies": {
     "cypress": "3.1.5",
-    "http-server": "0.11.1"
+    "http-server": "0.11.1",
+    "start-server-and-test": "1.7.11"
   }
 }
