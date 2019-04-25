@@ -22,6 +22,7 @@ All specs are in the [cypress/integration](cypress/integration) folder.
 spec | description
 --- | ---
 [simple.js](cypress/integration/simple.js) | no mocking, actual battery status
+[battery.js](cypress/integration/battery.js) | mocks `navigator.battery` method
 
 [renovate-badge]: https://img.shields.io/badge/renovate-app-blue.svg
 [renovate-app]: https://renovateapp.com/

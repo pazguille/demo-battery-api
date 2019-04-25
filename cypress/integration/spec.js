@@ -3,21 +3,6 @@
 /// <reference types="Cypress" />
 
 describe('battery test', () => {
-  context('navigator.battery', () => {
-    it('shows battery status of 50%', function () {
-      cy.visit('/', {
-        onBeforeLoad (win) {
-          win.navigator.battery = {
-            level: 0.5,
-            charging: false,
-            addEventListener: () => {}
-          }
-        }
-      })
-      cy.get('.battery-percentage').should('be.visible')
-    })
-  })
-
   context('navigator.getBattery', () => {
     it('shows battery status of 75%', function () {
       cy.visit('/', {
