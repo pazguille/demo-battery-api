@@ -15,5 +15,13 @@ Select any spec file from [cypress/integration](cypress/integration) folder
 
 ![Battery tests](images/battery.png)
 
+## Specs
+
+All specs are in the [cypress/integration](cypress/integration) folder.
+
+spec | description
+--- | ---
+[simple.js](cypress/integration/simple.js) | no mocking, actual battery status
+
 [renovate-badge]: https://img.shields.io/badge/renovate-app-blue.svg
 [renovate-app]: https://renovateapp.com/

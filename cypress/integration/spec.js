@@ -3,11 +3,6 @@
 /// <reference types="Cypress" />
 
 describe('battery test', () => {
-  it('shows battery status', function () {
-    cy.visit('/')
-    cy.get('.battery-percentage').should('be.visible')
-  })
-
   context('navigator.battery', () => {
     it('shows battery status of 50%', function () {
       cy.visit('/', {
