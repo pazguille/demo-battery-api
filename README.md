@@ -24,7 +24,7 @@ spec | description
 [simple.js](cypress/integration/simple.js) | no mocking, actual battery status
 [battery.js](cypress/integration/battery.js) | mocks `navigator.battery` method
 [get-battery.js](cypress/integration/get-battery.js) | stubs `navigator.getBattery` method
-[no-battery.js](cypress/integration/no-battery.js) | shows that application crashes if both `navigator.battery` and `navigator.getBattery` methods are missing
+[no-battery.js](cypress/integration/no-battery.js) | shows that application crashes if battery methods are missing
 
 [renovate-badge]: https://img.shields.io/badge/renovate-app-blue.svg
 [renovate-app]: https://renovateapp.com/
