@@ -1,28 +1,19 @@
-# Battery Status API [![CircleCI](https://circleci.com/gh/bahmutov/demo-battery-api.svg?style=svg)](https://circleci.com/gh/bahmutov/demo-battery-api) [![renovate-app badge][renovate-badge]][renovate-app]
+# Cypress tests for Battery Status API [![CircleCI](https://circleci.com/gh/bahmutov/demo-battery-api.svg?style=svg)](https://circleci.com/gh/bahmutov/demo-battery-api) [![renovate-app badge][renovate-badge]][renovate-app]
 
-> Battery Status API Demo
+> Forked from [https://github.com/pazguille/demo-battery-api](https://github.com/pazguille/demo-battery-api) with its demo at [http://pazguille.github.io/demo-battery-api/](http://pazguille.github.io/demo-battery-api/)
 
-## Demo
-http://pazguille.github.io/demo-battery-api/
+## Use
 
-## Support
-- Chrome 38+
-- Chrome for Android
-- Firefox 31+
+```
+git clone git@github.com:bahmutov/demo-battery-api.git
+cd demo-battery-api
+npm ci
+npm run dev
+```
 
-## Specs
-http://www.w3.org/TR/battery-status
+Select any spec file from [cypress/integration](cypress/integration) folder
 
-## Maintained by
-- Guille Paz (Frontender & Web standards lover)
-- E-mail: [guille87paz@gmail.com](mailto:guille87paz@gmail.com)
-- Twitter: [@pazguille](http://twitter.com/pazguille)
-- Web: [http://pazguille.me](http://pazguille.me)
-
-## License
-Licensed under the MIT license.
-
-Copyright (c) 2014 [@pazguille](http://twitter.com/pazguille).
+![Battery tests](images/battery.png)
 
 [renovate-badge]: https://img.shields.io/badge/renovate-app-blue.svg
 [renovate-app]: https://renovateapp.com/
