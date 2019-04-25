@@ -23,6 +23,7 @@ spec | description
 --- | ---
 [simple.js](cypress/integration/simple.js) | no mocking, actual battery status
 [battery.js](cypress/integration/battery.js) | mocks `navigator.battery` method
+[get-battery.js](cypress/integration/get-battery.js) | stubs `navigator.getBattery` method
 
 [renovate-badge]: https://img.shields.io/badge/renovate-app-blue.svg
 [renovate-app]: https://renovateapp.com/
