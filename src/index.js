@@ -5,13 +5,9 @@
 
   function toTime (sec) {
     sec = parseInt(sec, 10)
-
     var hours = Math.floor(sec / 3600)
-
     var minutes = Math.floor((sec - hours * 3600) / 60)
-
     var seconds = sec - hours * 3600 - minutes * 60
-
     if (hours < 10) {
       hours = '0' + hours
     }
@@ -21,7 +17,6 @@
     if (seconds < 10) {
       seconds = '0' + seconds
     }
-
     return hours + ':' + minutes
   }
 
@@ -29,9 +24,7 @@
     battery = b || battery
 
     var percentage = parseFloat((battery.level * 100).toFixed(2)) + '%'
-
     var fully
-
     var remaining
 
     if (battery.charging && battery.chargingTime === Infinity) {
