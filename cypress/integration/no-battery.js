@@ -4,6 +4,54 @@
 
 // skipping because the app crashes when there is no battery set
 context.skip('no battery', () => {
+  // this test fails on purpose
+  it('just deleting properties does not work', () => {
+    cy.visit('/', {
+      onBeforeLoad (win) {
+        delete win.navigator.battery
+
+        // how to delete navigator.getBattery method?
+        // deleting does not work
+        delete win.navigator.getBattery
+      }
+    })
+
+    // navigator.battery was deleted successfully
+    cy.window()
+      .its('navigator.battery')
+      .should('be.undefined')
+
+    // but navigator.getBattery happily remains there
+    cy.window()
+      .its('navigator.getBattery')
+      .should('be.undefined')
+  })
+
+  it('overriding getBattery works', () => {
+    cy.visit('/', {
+      onBeforeLoad (win) {
+        delete win.navigator.battery
+
+        // how to delete navigator.getBattery method?
+        // deleting does not work
+        // but we can just overwrite it with undefined!
+        Object.defineProperty(win.navigator, 'getBattery', {
+          value: undefined
+        })
+      }
+    })
+
+    // navigator.battery was deleted successfully
+    cy.window()
+      .its('navigator.battery')
+      .should('be.undefined')
+
+    // navigator.getBattery is "deleted"
+    cy.window()
+      .its('navigator.getBattery')
+      .should('be.undefined')
+  })
+
   it('should not crash', () => {
     // but the application does crash
     // if both navigator.battery and navigator.getBattery
