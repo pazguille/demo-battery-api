@@ -27,5 +27,10 @@ spec | description
 [updates.js](cypress/integration/updates.js) | verifies that application can receive battery status updates
 [no-battery.js](cypress/integration/no-battery.js) | shows that application crashes if battery methods are missing
 
+## Read
+
+- [Stub navigator API in end-to-end tests](https://glebbahmutov.com/blog/stub-navigator-api/)
+- [Code Coverage for End-to-end Tests](https://glebbahmutov.com/blog/code-coverage-for-e2e-tests/)
+
 [renovate-badge]: https://img.shields.io/badge/renovate-app-blue.svg
 [renovate-app]: https://renovateapp.com/
