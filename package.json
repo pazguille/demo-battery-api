@@ -6,13 +6,8 @@
   "scripts": {
     "test": "cypress run",
     "cy:open": "cypress open",
-    "start": "parcel serve build/index.html",
+    "start": "parcel serve index.html",
     "dev": "start-test 1234 cy:open",
-    "clean": "rm -rf build .nyc_output || true",
-    "preinstrument": "npm run clean",
-    "instrument": "nyc instrument --compact false src build/src",
-    "cp": "cp src/*.css build/src && cp src/*.png build/src && cp index.html build",
-    "build": "npm run instrument && npm run cp",
     "report:coverage": "nyc report --reporter=html"
   },
   "repository": {
@@ -27,6 +22,8 @@
   },
   "homepage": "https://github.com/bahmutov/demo-battery-api#readme",
   "devDependencies": {
+    "@babel/core": "7.4.4",
+    "babel-plugin-istanbul": "5.1.4",
     "cypress": "3.2.0",
     "http-server": "0.11.1",
     "istanbul-lib-coverage": "2.0.5",
