@@ -29,7 +29,7 @@ export function batteryStats (battery) {
     fully = '---'
   }
 
-  if (!battery.charging && battery.dischargingTime === Infinity) {
+  if (!charging && battery.dischargingTime === Infinity) {
     remaining = 'Calculating...'
   } else if (battery.dischargingTime !== Infinity) {
     remaining = toTime(battery.dischargingTime)

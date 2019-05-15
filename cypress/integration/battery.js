@@ -28,4 +28,20 @@ context('navigator.battery', () => {
     // and has enough juice for 1 hour
     cy.contains('.battery-remaining', '1:00').should('be.visible')
   })
+
+  it('shows message if charging but without time limit', function () {
+    cy.visit('/', {
+      onBeforeLoad (win) {
+        win.navigator.battery = {
+          level: 0.5,
+          charging: true,
+          chargingTime: Infinity,
+          dischargingTime: 3600, // seconds
+          addEventListener: () => {}
+        }
+      }
+    })
+
+    cy.contains('.battery-fully', 'Calculating...').should('be.visible')
+  })
 })
