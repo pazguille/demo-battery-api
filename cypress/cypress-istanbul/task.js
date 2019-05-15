@@ -64,6 +64,11 @@ module.exports = {
    * NPM script to generate HTML report
    */
   coverageReport () {
+    if (!existsSync(nycFilename)) {
+      console.warn('Cannot find coverage file %s', nycFilename)
+      console.warn('Skipping coverage report')
+      return null
+    }
     console.log('saving coverage report')
     return execa('npm', ['run', 'report:coverage'], { stdio: 'inherit' })
   }
