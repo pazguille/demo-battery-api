@@ -2,7 +2,7 @@
 // https://on.cypress.io/intelligent-code-completion
 /// <reference types="Cypress" />
 
-context.skip('navigator.getBattery', () => {
+context('navigator.getBattery', () => {
   // for these tests, return the same mock battery status
   const mockBatteryInfo = {
     level: 0.75,

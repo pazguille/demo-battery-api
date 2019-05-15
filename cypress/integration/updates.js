@@ -2,7 +2,7 @@
 // https://on.cypress.io/intelligent-code-completion
 /// <reference types="Cypress" />
 
-context.skip('navigator.getBattery updates', () => {
+context('navigator.getBattery updates', () => {
   it('updates battery display', function () {
     let appListener
     const updateBattery = cy

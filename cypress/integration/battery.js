@@ -2,7 +2,7 @@
 // https://on.cypress.io/intelligent-code-completion
 /// <reference types="Cypress" />
 
-context.skip('navigator.battery', () => {
+context('navigator.battery', () => {
   it('shows battery status of 50%', function () {
     cy.visit('/', {
       onBeforeLoad (win) {
