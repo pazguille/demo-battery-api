@@ -1,1 +1,1 @@
-import '../cypress-istanbul/support'
+import 'cypress-istanbul/support'
