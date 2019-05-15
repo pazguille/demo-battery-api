@@ -1,3 +1,4 @@
+# see https://github.com/cypress-io/circleci-orb
 version: 2.1
 orbs:
   cypress: cypress-io/cypress@1
@@ -5,6 +6,17 @@ workflows:
   build:
     jobs:
       - cypress/run:
+          # we need to start the web application
           start: npm start
+          # there are no jobs to follow this one
+          # so no need to save the workspace files (saves time)
+          no-workspace: true
           post-steps:
+            # store the created coverage report folder
+            # you can click on it in the CircleCI UI
+            # to see live static HTML site
+            - store_artifacts:
+                path: coverage
+            # and send coverage data to coveralls.io
+            # see https://coveralls.io/github/bahmutov/demo-battery-api
             - run: npm run coveralls
