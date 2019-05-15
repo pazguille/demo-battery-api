@@ -6,3 +6,5 @@ workflows:
     jobs:
       - cypress/run:
           start: npm start
+          post-steps:
+            - run: npm run coveralls
