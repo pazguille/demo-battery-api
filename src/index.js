@@ -20,6 +20,10 @@ if (navigator.battery) {
 }
 
 window.onload = function () {
+  if (!battery) {
+    return
+  }
+
   battery.addEventListener('chargingchange', function () {
     readBattery()
   })

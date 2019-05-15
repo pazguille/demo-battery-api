@@ -3,9 +3,9 @@
 /// <reference types="Cypress" />
 
 // skipping because the app crashes when there is no battery set
-context.skip('no battery', () => {
+context('no battery', () => {
   // this test fails on purpose
-  it('just deleting properties does not work', () => {
+  it.skip('just deleting properties does not work', () => {
     cy.visit('/', {
       onBeforeLoad (win) {
         delete win.navigator.battery
