@@ -70,6 +70,7 @@ module.exports = {
       return null
     }
     console.log('saving coverage report')
-    return execa('npm', ['run', 'report:coverage'], { stdio: 'inherit' })
+    // should we generate report via NYC module API?
+    return execa('nyc', ['report', '--reporter=html'], { stdio: 'inherit' })
   }
 }
