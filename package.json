@@ -8,7 +8,8 @@
     "cy:open": "cypress open",
     "start": "parcel serve index.html",
     "dev": "start-test 1234 cy:open",
-    "report:coverage": "nyc report --reporter=html"
+    "report:coverage": "nyc report --reporter=html",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,7 @@
   "devDependencies": {
     "@babel/core": "7.4.4",
     "babel-plugin-istanbul": "5.1.4",
+    "coveralls": "3.0.3",
     "cypress": "3.2.0",
     "http-server": "0.11.1",
     "istanbul-lib-coverage": "2.0.5",
