@@ -24,10 +24,11 @@
   "homepage": "https://github.com/bahmutov/demo-battery-api#readme",
   "devDependencies": {
     "@babel/core": "7.4.4",
+    "@cypress/browserify-preprocessor": "2.0.0",
     "babel-plugin-istanbul": "5.1.4",
     "coveralls": "3.0.3",
-    "cypress": "3.2.0",
-    "cypress-istanbul": "1.0.0",
+    "cypress": "3.3.0",
+    "cypress-istanbul": "1.1.0",
     "http-server": "0.11.1",
     "istanbul-lib-coverage": "2.0.5",
     "nyc": "14.1.1",

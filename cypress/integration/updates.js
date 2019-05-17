@@ -57,4 +57,49 @@ context('navigator.getBattery updates', () => {
         cy.contains('.battery-status', 'Battery').should('be.visible')
       })
   })
+
+  it('listens to chargingchange event', function () {
+    let appListener
+    // only listen to "chargingchange" event when the application calls
+    // battery.addEventListener("chargingchange", function () { ...})
+    const updateBattery = cy
+      .stub()
+      .callsFake((e, fn) => {
+        if (e === 'chargingchange') {
+          appListener = fn
+        }
+      })
+      .as('update')
+    const mockBatteryInfo = {
+      level: 0.3,
+      charging: true,
+      chargingTime: 1800, // seconds
+      dischargingTime: Infinity,
+      addEventListener: updateBattery
+    }
+
+    cy.visit('/', {
+      onBeforeLoad (win) {
+        delete win.navigator.battery
+        win.navigator.getBattery = () => Promise.resolve(mockBatteryInfo)
+      }
+    })
+    // initial display
+    cy.contains('.battery-percentage', '30%').should('be.visible')
+    cy.contains('.battery-status', 'Adapter').should('be.visible')
+
+    // application started listening for battery updates
+    // by attaching to two events
+    cy.get('@update')
+      .should('have.been.calledTwice')
+      // send a changed battery status event
+      .then(() => {
+        // verify the listener was set
+        expect(appListener).to.be.a('function')
+        mockBatteryInfo.level = 0.4
+        // log message for clarity
+        cy.log('Set battery at **40.0%**')
+        appListener()
+      })
+  })
 })
