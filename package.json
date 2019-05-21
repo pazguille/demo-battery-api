@@ -11,7 +11,9 @@
     "coverage-report": "nyc report",
     "report:coverage": "nyc report --reporter=html",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
-    "codecov": "nyc report --reporter=text-lcov && codecov"
+    "precodecov": "rm -rf coverage || true",
+    "codecov": "nyc report --reporter=lcovonly",
+    "postcodecov": "codecov"
   },
   "repository": {
     "type": "git",
