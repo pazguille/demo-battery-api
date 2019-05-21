@@ -20,3 +20,5 @@ workflows:
             # and send coverage data to coveralls.io
             # see https://coveralls.io/github/bahmutov/demo-battery-api
             - run: npm run coveralls
+            # and send code coverage to Codecov
+            - run: npm run codecov

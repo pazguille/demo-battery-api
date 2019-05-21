@@ -9,7 +9,8 @@
     "start": "parcel serve index.html",
     "dev": "start-test 1234 cy:open",
     "report:coverage": "nyc report --reporter=html",
-    "coveralls": "nyc report --reporter=text-lcov | coveralls"
+    "coveralls": "nyc report --reporter=text-lcov | coveralls",
+    "codecov": "nyc report --reporter=text-lcov | codecov"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
     "@babel/core": "7.4.4",
     "@cypress/browserify-preprocessor": "2.0.0",
     "babel-plugin-istanbul": "5.1.4",
+    "codecov": "3.5.0",
     "coveralls": "3.0.3",
     "cypress": "3.3.0",
     "cypress-istanbul": "1.1.0",
