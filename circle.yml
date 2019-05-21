@@ -17,6 +17,8 @@ workflows:
             # to see live static HTML site
             - store_artifacts:
                 path: coverage
+            # print text code coverage report
+            - run: npm run coverage-report
             # and send coverage data to coveralls.io
             # see https://coveralls.io/github/bahmutov/demo-battery-api
             - run: npm run coveralls

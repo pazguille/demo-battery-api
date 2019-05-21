@@ -8,6 +8,7 @@
     "cy:open": "cypress open",
     "start": "parcel serve index.html",
     "dev": "start-test 1234 cy:open",
+    "coverage-report": "nyc report",
     "report:coverage": "nyc report --reporter=html",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
     "codecov": "nyc report --reporter=text-lcov && codecov"
