@@ -10,7 +10,7 @@
     "dev": "start-test 1234 cy:open",
     "report:coverage": "nyc report --reporter=html",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
-    "codecov": "nyc report --reporter=text-lcov | codecov"
+    "codecov": "nyc report --reporter=text-lcov && codecov"
   },
   "repository": {
     "type": "git",
